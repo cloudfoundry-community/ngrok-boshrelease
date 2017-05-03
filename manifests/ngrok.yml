@@ -36,4 +36,6 @@ stemcells:
 
 releases:
 - name: ngrok
-  version: latest
+  version: 1.0.0
+  url: https://github.com/cloudfoundry-community/ngrok-boshrelease/releases/download/v1.0.0/ngrok-1.0.0.tgz
+  sha1: e95f03eeed543fe3d020316afe1736763ec77ba5
