@@ -5,12 +5,24 @@ packages:
 templates:
   bin/ctl: bin/ctl
   bin/monit_debugger: bin/monit_debugger
+  config/ngrok.yml: config/ngrok.yml
   helpers/ctl_setup.sh: helpers/ctl_setup.sh
   helpers/ctl_utils.sh: helpers/ctl_utils.sh
 
 properties:
-  port:
-    description: Local port to tunnel
-
   authtoken:
     description: Your ngrok.com auth token from https://dashboard.ngrok.com/get-started
+
+  config:
+    description: Configure the ngrok tunnels
+    documentation: https://ngrok.com/docs#tunnel-definitions
+    example: |
+      tunnels:
+        myapp:
+          proto: http
+          addr: 8000
+          subdomain: drnic-myapp
+
+  region:
+    description: Ngrok server region [us, eu, au, ap]
+    default: us

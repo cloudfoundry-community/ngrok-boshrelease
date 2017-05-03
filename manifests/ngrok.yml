@@ -12,8 +12,13 @@ instance_groups:
   - name: ngrok
     release: ngrok
     properties:
-      port: 80
       authtoken: ((ngrok-authtoken))
+      config: |
+        tunnels:
+          myapp:
+            proto: http
+            addr: 8000
+            subdomain: drnic-myapp
 
 update:
   canaries: 0

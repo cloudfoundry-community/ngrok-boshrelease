@@ -10,7 +10,6 @@ export PORT=${PORT:-5000}
 export LANG=en_US.UTF-8
 
 export PATH=$PATH:/var/vcap/packages/ngrok/bin
-ngrok authtoken "<%= p('authtoken') %>"
 
 case $1 in
 
@@ -20,7 +19,10 @@ case $1 in
     # store pid in $PIDFILE
     echo $$ > $PIDFILE
 
-    exec chpst -u vcap:vcap ngrok http <%= p('port') %> \
+    exec chpst -u vcap:vcap ngrok start --all --config $JOB_DIR/config/ngrok.yml \
+                                    --authtoken "<%= p('authtoken') %>" \
+                                    --region <%= p('region') %> \
+                                    --log stdout \
          >>$LOG_DIR/$JOB_NAME.log 2>&1
 
     ;;
