@@ -1,0 +1,4 @@
+---
+name: ngrok
+dependencies: []
+files: [ngrok/ngrok-*-linux-amd64.zip]

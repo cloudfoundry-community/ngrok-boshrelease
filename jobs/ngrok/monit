@@ -1,0 +1,5 @@
+check process ngrok
+  with pidfile /var/vcap/sys/run/ngrok/ngrok.pid
+  start program "/var/vcap/jobs/ngrok/bin/monit_debugger ngrok_ctl '/var/vcap/jobs/ngrok/bin/ctl start'"
+  stop program "/var/vcap/jobs/ngrok/bin/monit_debugger ngrok_ctl '/var/vcap/jobs/ngrok/bin/ctl stop'"
+  group vcap
