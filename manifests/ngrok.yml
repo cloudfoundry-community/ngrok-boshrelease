@@ -12,7 +12,7 @@ instance_groups:
   - name: ngrok
     release: ngrok
     properties:
-      authtoken: ((ngrok-authtoken))
+      authtoken: ((1eG3fAsycx6lfgt7ZmH1Grvlzse_7VmbTGhwjKnvZA1vs6Gx1))
       config: |
         tunnels:
           myapp:
